@@ -69,8 +69,7 @@ class EventsNews(models.Model):
         upload_to='events-image/',
         verbose_name='Изображение'
     )
-    time = models.CharField(
-        max_length=255,
+    time = models.TextField(
         verbose_name='Время проведения мероприятия'
     )
     def __str__(self):

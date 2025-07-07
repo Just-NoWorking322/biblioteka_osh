@@ -11,8 +11,8 @@ class Afisha(models.Model):
     title_2 = RichTextField(verbose_name='Заголовок о мероприятиях')
 
     class Meta:
-        verbose_name = "Объявление о мероприятиях"
-        verbose_name_plural = "Объявления о мероприятиях"
+        verbose_name = "Мероприятие"
+        verbose_name_plural = "Мероприятия"
 
 
 class Events(models.Model):
@@ -28,5 +28,5 @@ class Events(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Мероприятие"
-        verbose_name_plural = "Мероприятия"
+        verbose_name = "Объявление о мероприятиях"
+        verbose_name_plural = "Объявления о мероприятиях"
