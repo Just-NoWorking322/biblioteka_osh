@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from . models import *
+from .models import News, DailyNews, EventsNews, BookArrival, Catalog, MediaCoverage
 
 @register(News)
 class NewsTranslationOption(TranslationOptions):
@@ -19,7 +19,7 @@ class BookArrivalTranslationOption(TranslationOptions):
 
 @register(Catalog)
 class SpecialBookArrivalTranslationOption(TranslationOptions):
-    fields = ('special_feature', 'note')
+    fields = ('title' ,'author', 'special_feature', 'note')
 
 @register(MediaCoverage)
 class MediaCoverageTranslationOption(TranslationOptions):

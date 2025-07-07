@@ -97,7 +97,9 @@ class BookArrival(models.Model):
         verbose_name = "Прибытие книги"
         verbose_name_plural = "Прибытие книг"
         
-class Catalog(BookArrival):
+class Catalog(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Заголовок")
+    author = models.CharField(max_length=255, verbose_name="Автор")
     special_feature = models.CharField(max_length=255, verbose_name="Особенность")
     note = models.TextField(verbose_name="Примечание", blank=True, null=True)  
     popular = models.BooleanField(verbose_name='Популярное', blank=True, null=True)

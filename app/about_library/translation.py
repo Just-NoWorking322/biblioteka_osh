@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from app.about_library.models import AboutLibrary, TitlesLibrary, Management, Acts, History
+from app.about_library.models import AboutLibrary, TitlesLibrary, Management, Acts, History, StructureAndLibraries
 
 
 @register(AboutLibrary)
@@ -21,3 +21,7 @@ class ActsTranslationOption(TranslationOptions):
 @register(History)
 class HistoryTranslationOption(TranslationOptions):
     fields = ('title', 'description')
+
+@register(StructureAndLibraries)
+class StructureAndLibrariesTranslationOption(TranslationOptions):
+    fields = ('image',)

@@ -7,11 +7,14 @@ from .translations import *
 class ActivityAdmin(TranslationAdmin):
     fieldsets = ( 
         ('Русская версия', {
-            'fields': ['title_ru', 'description_ru', 'description_details_ru', 'links', 'type_ru'],
+            'fields': ['title_ru', 'description_ru', 'description_details_ru',  'type_ru'],
         }),
         ('Кыргызская версия', {
             'fields': ['title_ky', 'description_ky', 'description_details_ky', 'type_ky'],
         }),
+        ('Ссылка', {
+            'fields': ['links']
+        })
     )
 
 admin.site.register(Activity, ActivityAdmin)

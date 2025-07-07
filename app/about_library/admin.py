@@ -46,8 +46,17 @@ class ManagementAdmin(TranslationAdmin):
     
 admin.site.register(Management, ManagementAdmin)
 
-
-admin.site.register(StructureAndLibraries)
+class StructureAndLibrariesAdmin(TranslationAdmin):
+    fieldsets = (
+        ('Русская версия', {
+            'fields': ['image_ru'],
+        }),
+        ('Кыргызская версия', {
+            'fields': ['image_ky'],
+        }),
+    )
+    
+admin.site.register(StructureAndLibraries, StructureAndLibrariesAdmin)
 
 class ActsAdmin(TranslationAdmin):
     fieldsets = (
