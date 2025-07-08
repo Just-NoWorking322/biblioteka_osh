@@ -8,7 +8,10 @@ class Afisha(models.Model):
     image = models.ImageField(verbose_name='Изображение', upload_to='afisha/',  blank=True, null=True)
     description = RichTextField(verbose_name='Описание', help_text='Описание библиотеки')
 
-    title_2 = RichTextField(verbose_name='Заголовок о мероприятиях')
+    title_2 = models.TextField(verbose_name='Заголовок о мероприятиях')
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         verbose_name = "Мероприятие"

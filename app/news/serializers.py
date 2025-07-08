@@ -9,7 +9,7 @@ class NewsSerializer(serializers.ModelSerializer):
 class DailyNewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = DailyNews
-        fields = ["id", "title", "description", "image", 'date']
+        fields = ["id", "title", "description",'detailed_description', "image", 'date']
 
 class EventsNewsSerializer(serializers.ModelSerializer):
     class Meta:
