@@ -50,6 +50,7 @@ class Pay(models.Model):
     def __str__(self):
         return self.title
 
-    class Mtea:
-        verobase_name_plural = 'Способ оплаты'
+    class Meta:
+        verbose_name = 'Способ оплат'
+        verbose_name_plural = 'Способы оплаты'
     

@@ -21,12 +21,3 @@ class MainProjectsAdmin(TranslationAdmin):
             'fields': ['image', 'created_at'],
         }),
     )
-@admin.register(AmericanCorner)
-class AmericanCornerAdmin(TranslationAdmin):
-    fieldsets = (
-        ("Русская версия", {'fields': ('title_ru', 'description_ru')}),
-        ("Кыргызская версия", {'fields': ('title_ky', 'description_ky')}),
-        ('Фотография', {
-            'fields': ['image', 'created_at'],
-        }),
-    )

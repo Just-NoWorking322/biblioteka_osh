@@ -1,15 +1,10 @@
 from modeltranslation.translator import TranslationOptions, register
 
-from .models import *
+from .models import Afisha
 
 @register(Afisha)
 class AfishaTranslationOptions(TranslationOptions):
     fields = ('title', 'description', 'title_2')
-
-
-@register(Events)
-class EventsTranslationOptions(TranslationOptions):
-    fields = ('title', 'description', 'information')
 
 
 

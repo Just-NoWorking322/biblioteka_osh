@@ -14,8 +14,8 @@ class Afisha(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Мероприятие"
-        verbose_name_plural = "Мероприятия"
+        verbose_name = "Страница мероприятие"
+        verbose_name_plural = "Страница мероприятия"
 
 
 class Events(models.Model):

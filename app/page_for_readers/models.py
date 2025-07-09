@@ -19,8 +19,8 @@ class Graphic_work(models.Model):
     description = RichTextField(verbose_name= 'описание')
 
     class Meta:
-        verbose_name = 'страница читателям про график'
-        verbose_name_plural = 'страницы читателям про график'
+        verbose_name = 'График работы'
+        verbose_name_plural = 'График работы'
 
     def __str__(self):
         return self.title

@@ -14,8 +14,8 @@ class AboutLibrary(models.Model):
         return self.title_1
 
     class Meta:
-        verbose_name = "О библиотеке"
-        verbose_name_plural = "О библиотеке"
+        verbose_name = "Страница О библиотеке"
+        verbose_name_plural = "Страница О библиотеке"
 
 
 class TitlesLibrary(models.Model):

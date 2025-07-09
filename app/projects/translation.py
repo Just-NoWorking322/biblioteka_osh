@@ -9,6 +9,3 @@ class OurProjectsTranslationOptions(TranslationOptions):
 class MainProjectsTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
 
-@register(AmericanCorner)
-class AmericanCornerTranslationOptions(TranslationOptions):
-    fields = ('title', 'description')

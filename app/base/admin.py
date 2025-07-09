@@ -29,19 +29,7 @@ class CatalogsAdmin(TranslationAdmin):
         }),
     )
 admin.site.register(Catalogs, CatalogsAdmin)
-class ElectronicLibraryAdmin(TranslationAdmin):
-    fieldsets = (
-        ('Русская версия', {
-            'fields': ['title_ru', 'description_ru'],
-        }),
-        ('Кыргызская версия', {
-            'fields': ['title_ky', 'description_ky'],
-        }),
-        ('Изображения', {
-            'fields': ['image'],
-        }),
-    )
-admin.site.register(ElectronicLibrary, ElectronicLibraryAdmin)
+
 
 
 

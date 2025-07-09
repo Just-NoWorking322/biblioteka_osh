@@ -9,12 +9,12 @@ class NewsSerializer(serializers.ModelSerializer):
 class DailyNewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = DailyNews
-        fields = ["id", "title", "description",'detailed_description', "image", 'date']
+        fields = ["id", "title", "description", 'detailed_description', "image", 'date']
 
 class EventsNewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = EventsNews
-        fields = ["id", "title", "description", "image", "time"]
+        fields = ["id", "title", "description", "detailed_description", "image", "time"]
         
 class BookArrivalSerializer(serializers.ModelSerializer):
     open_url = serializers.SerializerMethodField()

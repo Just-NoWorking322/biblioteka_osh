@@ -11,9 +11,7 @@ class LogoTranslation(TranslationOptions):
 class CatalogsTranslation(TranslationOptions):
     fields = ('title', 'description')
     
-@register(ElectronicLibrary)
-class ElectronicLibraryTranslation(TranslationOptions):
-    fields = ('title', 'description')
+
 
 @register(WeOfferViewing)
 class WeOfferViewingTranslation(TranslationOptions):

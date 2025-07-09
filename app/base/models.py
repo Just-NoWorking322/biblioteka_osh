@@ -262,8 +262,8 @@ class HeaderFooter(models.Model):
     youtube_icon_url = models.URLField(verbose_name='Ссылка YouTube', blank=True, null=True)
     
     class Meta:
-        verbose_name = 'Хедер и Футер'
-        verbose_name_plural = 'Хедеры и Футеры'
+        verbose_name = 'Заголовок и нижний колонтитул'
+        verbose_name_plural = 'Заголовоки и нижние колонтитулы'
 
     def __str__(self):
         return f"HeaderFooter (id: {self.id})"
