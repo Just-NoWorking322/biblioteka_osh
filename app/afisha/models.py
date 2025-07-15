@@ -4,11 +4,14 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Afisha(models.Model):
-    title = models.CharField(max_length=255, verbose_name='Заголовок', help_text='Объявление о мероприятиях')
+    title = models.CharField(max_length=255, verbose_name='Заголовок')
     image = models.ImageField(verbose_name='Изображение', upload_to='afisha/',  blank=True, null=True)
-    description = RichTextField(verbose_name='Описание', help_text='Описание библиотеки')
+    description = RichTextField(verbose_name='Описание')
 
     title_2 = models.TextField(verbose_name='Заголовок о мероприятиях')
+
+    def __str__(self):
+        return self.title
 
     def __str__(self):
         return self.title

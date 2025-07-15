@@ -48,6 +48,9 @@ class Management(models.Model):
 class StructureAndLibraries(models.Model):
     image = models.ImageField(upload_to="StructureAndLibraries-image/", verbose_name="Изображение")
 
+    def __str__(self):
+        return 'Структура и библиотеки'
+
     class Meta:
         verbose_name = "Структура и библиотеки"
         verbose_name_plural = "Структуры и библиотеки"

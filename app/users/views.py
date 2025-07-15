@@ -168,23 +168,25 @@ class PasswordResetConfirmView(GenericAPIView):
 
         return Response(serializer.errors, status=400)
 
-
 class UserCabinetView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        serializer = UserCabinetSerializer(request.user)
+        serializer = UserCabinetSerializer(request.user, context={'request': request})
         return Response(serializer.data)
+
     def patch(self, request):
-        serializer = UserCabinetSerializer(request.user, data=request.data, partial=True)
+        serializer = UserCabinetSerializer(
+            request.user,
+            data=request.data,
+            partial=True,
+            context={'request': request}
+        )
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=400)
-    read_only_fields = [
-            'id', 'email', 'gender_display', 'category_display',
-            'reitforusers', 'is_email_verified', 'read_books', 'read_books_count',
-        ]
+
 class ReadBookUploadView(APIView):
     permission_classes = [IsAuthenticated]
 

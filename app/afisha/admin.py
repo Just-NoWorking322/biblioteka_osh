@@ -17,7 +17,3 @@ class AfishaAdmin(TranslationAdmin):
             'fields': ['title_ky', 'description_ky', 'title_2_ky'],
         }),
     )
-
-    
-
-    

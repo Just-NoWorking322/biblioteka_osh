@@ -154,24 +154,36 @@ class UserCabinetSerializer(serializers.ModelSerializer):
     category_display = serializers.CharField(source='get_category_display', read_only=True)
     read_books = ReadBookOutputSerializer(many=True, read_only=True)
     read_books_count = serializers.SerializerMethodField()
+    avatarka = serializers.FileField(required=False, allow_null=True, write_only=True)
+    avatarka_url = serializers.SerializerMethodField(read_only=True)
 
-    avatarka = serializers.ImageField(required=False, allow_null=True)
 
     class Meta:
         model = User
         fields = [
             'id', 'full_name', 'email', 'phone', 'gender', 'gender_display',
             'birth_date', 'category', 'category_display', 'reitforusers',
-            'is_email_verified', 'read_books', 'read_books_count', 'avatarka'
+            'is_email_verified', 'read_books', 'read_books_count',
+            'avatarka', 'avatarka_url'
+        ]
+        read_only_fields = [
+            'id', 'email', 'gender_display', 'category_display',
+            'reitforusers', 'is_email_verified', 'read_books', 'read_books_count'
         ]
 
     def get_read_books_count(self, obj):
         return obj.read_books.count()
 
+    def get_avatarka_url(self, obj):
+        request = self.context.get('request')
+        if obj.avatarka and hasattr(obj.avatarka, 'url') and request:
+            return request.build_absolute_uri(obj.avatarka.url)
+        return None
+    
     def to_representation(self, instance):
         rep = super().to_representation(instance)
-        request = self.context.get('request')
-        if instance.avatarka and request:
-            rep['avatarka'] = request.build_absolute_uri(instance.avatarka.url)
-        return rep
 
+        if not instance.avatarka:
+            rep['avatarka'] = None
+
+        return rep

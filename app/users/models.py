@@ -63,14 +63,15 @@ class User(AbstractUser):
         null=True, blank=True,
         verbose_name="Номер телефона"
     )
-
+    
     reitforusers = models.PositiveIntegerField(
         default=0,
         verbose_name="Рейтинг пользователя"
     )
     is_email_verified = models.BooleanField(default=False, verbose_name="Email подтвержден")
     reset_password_code = models.CharField(max_length=6, blank=True, null=True)
-    avatarka = models.ImageField(upload_to="avatarka/", verbose_name="Изображение Профиля", blank=True, null=True)
+    avatarka = models.FileField(upload_to="avatarka/", verbose_name="Изображение Профиля Файл", blank=False, null=True)
+   
 
     def save(self, *args, **kwargs):
         if not self.username:

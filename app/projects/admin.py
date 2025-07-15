@@ -21,3 +21,4 @@ class MainProjectsAdmin(TranslationAdmin):
             'fields': ['image', 'created_at'],
         }),
     )
+
